@@ -15,8 +15,7 @@ Understanding and Implementing the fundamental building blocks of Deep Learning 
 | 3 | **ReLU** | *Rectified Linear Units Improve Restricted Boltzmann Machines* | 2010 | [PDF](https://www.cs.toronto.edu/~hinton/absps/reluICML.pdf) |
 | 4 | **Leaky ReLU** | *Rectifier Nonlinearities Improve Neural Network Acoustic Models* | 2013 | [PDF](https://arxiv.org/abs/1303.2662) |
 | 5 | **ELU (Exponential Linear Unit)** | *Fast and Accurate Deep Network Learning by Exponential Linear Units (ELUs)* | 2015 | [arXiv:1511.07289](https://arxiv.org/abs/1511.07289) |
-| 6 | **Swish** | *Searching for Activation Functions* | 2017 | [arXiv:1710.05941](https://arxiv.org/abs/1710.05941) |
-| 7 | **GELU (Gaussian Error Linear Unit)** | *Gaussian Error Linear Units (GELUs)* | 2016 | [arXiv:1606.08415](https://arxiv.org/abs/1606.08415) |
+| 6 | **GELU (Gaussian Error Linear Unit)** | *Gaussian Error Linear Units (GELUs)* | 2016 | [arXiv:1606.08415](https://arxiv.org/abs/1606.08415) |
 
 ---
 ## 🔸 Optimizers
