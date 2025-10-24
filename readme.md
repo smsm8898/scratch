@@ -4,6 +4,7 @@ Understanding and Implementing the fundamental building blocks of Deep Learning 
 ## Prerequisities
 - python >= 3.9
 - numpy >= 2.0.0
+- scikit-learn >= 1.6.0
 
 ---
 ## 🔸 Activation Functions
@@ -29,12 +30,6 @@ Understanding and Implementing the fundamental building blocks of Deep Learning 
 | 5 | **RMSProp** | – (Geoff Hinton lecture notes) | 2012 | [Link](http://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf) |
 | 6 | **Adam** | *Adam: A Method for Stochastic Optimization* | 2015 | [arXiv:1412.6980](https://arxiv.org/abs/1412.6980) |
 | 7 | **AdamW** | *Decoupled Weight Decay Regularization* | 2017 | [arXiv:1711.05101](https://arxiv.org/abs/1711.05101) |
-| 8 | **Nadam** | *Incorporating Nesterov Momentum into Adam* | 2016 | [arXiv:1609.04747](https://arxiv.org/abs/1609.04747) |
-| 9 | **AdaMax** | *Adam: A Method for Stochastic Optimization* | 2015 | [arXiv:1412.6980](https://arxiv.org/abs/1412.6980) |
-| 10 | **AMSGrad** | *On the Convergence of Adam and Beyond* | 2018 | [arXiv:1904.09237](https://arxiv.org/abs/1904.09237) |
-| 11 | **RAdam** | *On the Variance of the Adaptive Learning Rate and Beyond* | 2019 | [arXiv:1908.03265](https://arxiv.org/abs/1908.03265) |
-| 12 | **Yogi** | *Adaptive Methods for Nonconvex Optimization* | 2018 | [arXiv:1810.06801](https://arxiv.org/abs/1810.06801) |
-| 13 | **Lion (EvoGrad)** | *Symbolic Discovery of Optimization Algorithms* | 2023 | [arXiv:2302.06675](https://arxiv.org/abs/2302.06675) |
 
 
 ## 🔸 Normalization
