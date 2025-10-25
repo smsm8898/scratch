@@ -4,4 +4,5 @@ class SGD:
         self.lr = lr
 
     def update(self, w, grad):
-        return w - self.lr * grad
+        w = w - self.lr * grad
+        return w
