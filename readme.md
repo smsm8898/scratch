@@ -24,12 +24,12 @@ Understanding and Implementing the fundamental building blocks of Deep Learning 
 | No | Name | Paper Title | Year | Link |
 |----|------|--------------|------|------|
 | 1 | **SGD** | – | – | – |
-| 2 | **SGD + Momentum** | “A Method for Stochastic Optimization” | 1964 | [PDF](https://web.stanford.edu/class/ee398a/papers/polyak1964.pdf) |
-| 3 | **Nesterov Accelerated Gradient (NAG)** | “A Method for Unconstrained Convex Minimization Problem with Convergence Rate O(1/k²)” | 1983 | [PDF](https://www.math.ku.dk/~rolf/teaching/10nesterov.pdf) |
-| 4 | **AdaGrad** | “Adaptive Subgradient Methods for Online Learning and Stochastic Optimization” | 2011 | [PDF](https://www.jmlr.org/papers/volume12/duchi11a/duchi11a.pdf) |
-| 5 | **RMSProp** | – (Geoff Hinton lecture notes) | 2012 | [Link](http://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf) |
-| 6 | **Adam** | *Adam: A Method for Stochastic Optimization* | 2015 | [arXiv:1412.6980](https://arxiv.org/abs/1412.6980) |
-| 7 | **AdamW** | *Decoupled Weight Decay Regularization* | 2017 | [arXiv:1711.05101](https://arxiv.org/abs/1711.05101) |
+| 2 | **SGD + Momentum** | A Method for Stochastic Optimization | 1964 | [PDF](https://web.stanford.edu/class/ee398a/papers/polyak1964.pdf) |
+| 3 | **Nesterov Accelerated Gradient (NAG)** | A Method for Unconstrained Convex Minimization Problem with Convergence Rate O(1/k²) | 1983 | [PDF](https://www.math.ku.dk/~rolf/teaching/10nesterov.pdf) |
+| 4 | **AdaGrad** | Adaptive Subgradient Methods for Online Learning and Stochastic Optimization | 2011 | [PDF](https://www.jmlr.org/papers/volume12/duchi11a/duchi11a.pdf) |
+| 5 | **RMSProp** | Geoff Hinton lecture notes | 2012 | [Link](http://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf) |
+| 6 | **Adam** | Adam: A Method for Stochastic Optimization | 2015 | [arXiv:1412.6980](https://arxiv.org/abs/1412.6980) |
+| 7 | **AdamW** | Decoupled Weight Decay Regularization | 2017 | [arXiv:1711.05101](https://arxiv.org/abs/1711.05101) |
 
 
 ## 🔸 Normalization
