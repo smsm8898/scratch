@@ -7,66 +7,44 @@ Understanding and Implementing the fundamental building blocks of Deep Learning 
 - scikit-learn >= 1.6.0
 
 ---
-## 🔸 Activation Functions
+## 🔸 [Activation Functions](https://velog.io/@smsm8898/Study-Activation-Functions)
 
-| No | Name | Paper Title | Year | Link |
-|----|------|--------------|------|------|
-| 1 | **Sigmoid** | – | – | – |
-| 2 | **Tanh** | – | – | – |
-| 3 | **ReLU** | *Rectified Linear Units Improve Restricted Boltzmann Machines* | 2010 | [PDF](https://www.cs.toronto.edu/~hinton/absps/reluICML.pdf) |
-| 4 | **Leaky ReLU** | *Rectifier Nonlinearities Improve Neural Network Acoustic Models* | 2013 | [PDF](https://arxiv.org/abs/1303.2662) |
-| 5 | **ELU (Exponential Linear Unit)** | *Fast and Accurate Deep Network Learning by Exponential Linear Units (ELUs)* | 2015 | [arXiv:1511.07289](https://arxiv.org/abs/1511.07289) |
-| 6 | **GELU (Gaussian Error Linear Unit)** | *Gaussian Error Linear Units (GELUs)* | 2016 | [arXiv:1606.08415](https://arxiv.org/abs/1606.08415) |
+| No | Name                                  | PyTorch  | 특징                  | 
+| -- | ------------------------------------- | -------------- | -------------------------- | 
+| 1  | **Sigmoid**                           | `torch.nn.Sigmoid`   | 출력 0~1 / 이진 분류 시 사용        |
+| 2  | **Tanh**                              | `torch.nn.Tanh`      | 출력 -1~1 / 중심화된 활성화         |
+| 3  | **ReLU**                              | `torch.nn.ReLU`      | 양수만 통과 / sparse activation | 
+| 4  | **Leaky ReLU**                        | `torch.nn.LeakyReLU` | 음수 영역도 작은 기울기 유지           | 
+| 5  | **ELU (Exponential Linear Unit)**     | `torch.nn.ELU`       | 음수 영역 완만 / 평균 활성화 0 근처     |
+| 6  | **GELU (Gaussian Error Linear Unit)** | `torch.nn.GELU`      | 확률적 / Transformer 계열에서 사용  |
+
 
 ---
-## 🔸 Optimizers
+## 🔸 [Optimizers Functions](https://velog.io/@smsm8898/Study-Optimizer-Functions)
 
-| No | Name | Paper Title | Year | Link |
-|----|------|--------------|------|------|
-| 1 | **SGD** | – | – | – |
-| 2 | **SGD + Momentum** | A Method for Stochastic Optimization | 1964 | [PDF](https://web.stanford.edu/class/ee398a/papers/polyak1964.pdf) |
-| 3 | **Nesterov Accelerated Gradient (NAG)** | A Method for Unconstrained Convex Minimization Problem with Convergence Rate O(1/k²) | 1983 | [PDF](https://www.math.ku.dk/~rolf/teaching/10nesterov.pdf) |
-| 4 | **AdaGrad** | Adaptive Subgradient Methods for Online Learning and Stochastic Optimization | 2011 | [PDF](https://www.jmlr.org/papers/volume12/duchi11a/duchi11a.pdf) |
-| 5 | **RMSProp** | Geoff Hinton lecture notes | 2012 | [Link](http://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf) |
-| 6 | **Adam** | Adam: A Method for Stochastic Optimization | 2015 | [arXiv:1412.6980](https://arxiv.org/abs/1412.6980) |
-| 7 | **AdamW** | Decoupled Weight Decay Regularization | 2017 | [arXiv:1711.05101](https://arxiv.org/abs/1711.05101) |
+| No | Name                                    | PyTorch        | 특징                | 
+| -- | --------------------------------------- | -------------------------------- | ------------------------ | 
+| 1  | **SGD**                                 | `torch.optim.SGD`                | 기본 확률적 경사 하강법            |
+| 2  | **SGD + Momentum**                      | `torch.optim.SGD(momentum=0.9)`  | 모멘텀 적용 SGD               | 
+| 3  | **Nesterov Accelerated Gradient (NAG)** | `torch.optim.SGD(nesterov=True)` | NAG / lookahead gradient | 
+| 4  | **AdaGrad**                             | `torch.optim.Adagrad`            | 학습률 적응 / 과거 gradient 반영  |
+| 5  | **RMSProp**                             | `torch.optim.RMSprop`            | 지수 이동 평균 기반 학습률 조절       |
+| 6  | **Adam**                                | `torch.optim.Adam`               | Momentum + RMSProp 결합    | 
+| 7  | **AdamW**                               | `torch.optim.AdamW`              | Weight Decay 분리 적용       |
 
 
-## 🔸 Normalization
 
-| No | Name | Paper Title | Year | Link |
-|----|------|--------------|------|------|
-| 1 | **Batch Normalization** | *Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift* | 2015 | [arXiv:1502.03167](https://arxiv.org/abs/1502.03167) |
-| 2 | **Layer Normalization** | *Layer Normalization* | 2016 | [arXiv:1607.06450](https://arxiv.org/abs/1607.06450) |
+## 🔸 Loss Functions
+| No | Name                                  | PyTorch            | Type                         | 
+| -- | ------------------------------------- | ------------------------ | ---------------------------- | 
+| 1  | **Mean Squared Error Loss**           | `torch.nn.MSELoss`             | Regression                   |
+| 2  | **Mean Absolute Error Loss / L1Loss** | `torch.nn.L1Loss`              | Regression                   |
+| 3  | **Binary Cross Entropy Loss**         | `torch.nn.BCELoss`             | Binary Classification        |
+| 4  | **Binary Cross Entropy with Logits**  | `torch.nn.BCEWithLogitsLoss`   | Binary Classification        |
+| 5  | **Cross Entropy Loss**                | `torch.nn.CrossEntropyLoss`    | Multi-class Classification   |
+| 6  | **Huber Loss / Smooth L1 Loss**       | `torch.nn.SmoothL1Loss`        | Regression / Robust          |
+| 7  | **KL Divergence Loss**                | `torch.nn.KLDivLoss`           | Distribution / Probabilities |
+| 8  | **Hinge Loss (Multi-margin)**         | `torch.nn.MultiMarginLoss`     | Classification               |
+| 9  | **Cosine Embedding Loss**             | `torch.nn.CosineEmbeddingLoss` | Metric Learning              |
+| 10 | **Triplet Margin Loss**               | `torch.nn.TripletMarginLoss`   | Metric Learning              |
 
----
-
-## 🔸 Regularization
-
-| No | Name | Paper Title | Year | Link |
-|----|------|--------------|------|------|
-| 1 | **L1/L2 Regularization** | “A Simple Weight Decay Can Improve Generalization” (Andrew Krogh & John Hertz)| 1992 |[PDF](https://proceedings.neurips.cc/paper/1991/file/8eefcfdf5990e441f0fb6f3fad709e21-Paper.pdf)|
-| 2 | **Dropout** | *Dropout: A Simple Way to Prevent Neural Networks from Overfitting* | 2014 | [arXiv:1207.0580](https://arxiv.org/abs/1207.0580) |
-| 3|  **Label Smoothing** | “Rethinking the Inception Architecture for Computer Vision” (Szegedy et al.)| 2016 | [arXiv:1512.00567](https://arxiv.org/abs/1512.00567)|
-
----
-<!-- ## 🔸 Weight Initialization
-
-| No | Name | Paper Title | Year | Link |
-|----|------|--------------|------|------|
-| 1 | **Xavier Initialization** | *Understanding the Difficulty of Training Deep Feedforward Neural Networks* | 2010 | [arXiv:1006.0254](https://arxiv.org/abs/1006.0254) |
-| 2 | **He Initialization**     | “Delving Deep into Rectifiers: Surpassing Human-Level Performance on ImageNet Classification” (He et al.) | 2015 | [arXiv:1502.01852](https://arxiv.org/abs/1502.01852)|
-| 3 | **LSUV Initialization**   | “All You Need is a Good Init” (Mishkin & Matas) | 2016 | [arXiv:1511.06422](https://arxiv.org/abs/1511.06422) |
- -->
-
----
-
-<!-- ## 🔸 Architecture Components
-
-| No | Name | Paper Title | Year | Link |
-|----|------|--------------|------|------|
-| 1 | **Convolution (Conv2D)** | *ImageNet Classification with Deep Convolutional Neural Networks (AlexNet)* | 2012 | [PDF](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf) |
-| 2 | **Pooling (Max/Avg)** | *LeNet-5, Gradient-Based Learning Applied to Document Recognition* | 1998 | [Link](http://yann.lecun.com/exdb/lenet/) |
-| 3 | **Residual Connection (ResNet)** | *Deep Residual Learning for Image Recognition* | 2015 | [arXiv:1512.03385](https://arxiv.org/abs/1512.03385) |
-
---- -->
