@@ -6,6 +6,10 @@ Understanding and Implementing the fundamental building blocks of Deep Learning 
 - numpy >= 2.0.0
 - scikit-learn >= 1.6.0
 
+## Experiment
+- To check the functions, open `activations`, `optimizers`, `losses`
+- The experiment is implemented on `notebooks`
+
 ---
 ## 🔸 [Activation Functions](https://velog.io/@smsm8898/Study-Activation-Functions)
 
