@@ -34,17 +34,13 @@ Understanding and Implementing the fundamental building blocks of Deep Learning 
 
 
 
-## 🔸 Loss Functions
+## 🔸 [Loss Functions](https://velog.io/@smsm8898/Study-Loss-Functions)
+
 | No | Name                                  | PyTorch            | Type                         | 
 | -- | ------------------------------------- | ------------------------ | ---------------------------- | 
 | 1  | **Mean Squared Error Loss**           | `torch.nn.MSELoss`             | Regression                   |
 | 2  | **Mean Absolute Error Loss / L1Loss** | `torch.nn.L1Loss`              | Regression                   |
-| 3  | **Binary Cross Entropy Loss**         | `torch.nn.BCELoss`             | Binary Classification        |
-| 4  | **Binary Cross Entropy with Logits**  | `torch.nn.BCEWithLogitsLoss`   | Binary Classification        |
+| 3  | **Huber Loss / Smooth L1 Loss**       | `torch.nn.SmoothL1Loss`        | Regression / Robust          |
+| 4  | **Binary Cross Entropy Loss**         | `torch.nn.BCELoss`             | Binary Classification        |
 | 5  | **Cross Entropy Loss**                | `torch.nn.CrossEntropyLoss`    | Multi-class Classification   |
-| 6  | **Huber Loss / Smooth L1 Loss**       | `torch.nn.SmoothL1Loss`        | Regression / Robust          |
-| 7  | **KL Divergence Loss**                | `torch.nn.KLDivLoss`           | Distribution / Probabilities |
-| 8  | **Hinge Loss (Multi-margin)**         | `torch.nn.MultiMarginLoss`     | Classification               |
-| 9  | **Cosine Embedding Loss**             | `torch.nn.CosineEmbeddingLoss` | Metric Learning              |
-| 10 | **Triplet Margin Loss**               | `torch.nn.TripletMarginLoss`   | Metric Learning              |
 
