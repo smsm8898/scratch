@@ -8,9 +8,12 @@ Understanding and Implementing the fundamental building blocks of Deep Learning 
 
 ## Experiment
 - To check the functions, open `activations`, `optimizers`, `losses`
+- For `Augmentation` experiment, I used `torchvision.transforms` functions
 - The experiment is implemented on `notebooks`
 
 ---
+<br>
+
 ## 🔸 [Activation Functions](https://velog.io/@smsm8898/Study-Activation-Functions)
 
 | No | Name                                  | PyTorch  | 특징                  | 
@@ -24,6 +27,8 @@ Understanding and Implementing the fundamental building blocks of Deep Learning 
 
 
 ---
+<br>
+
 ## 🔸 [Optimizers Functions](https://velog.io/@smsm8898/Study-Optimizer-Functions)
 
 | No | Name                                    | PyTorch        | 특징                | 
@@ -37,6 +42,8 @@ Understanding and Implementing the fundamental building blocks of Deep Learning 
 | 7  | **AdamW**                               | `torch.optim.AdamW`              | Weight Decay 분리 적용       |
 
 
+---
+<br>
 
 ## 🔸 [Loss Functions](https://velog.io/@smsm8898/Study-Loss-Functions)
 
@@ -48,3 +55,21 @@ Understanding and Implementing the fundamental building blocks of Deep Learning 
 | 4  | **Binary Cross Entropy Loss**         | `torch.nn.BCELoss`             | Binary Classification        |
 | 5  | **Cross Entropy Loss**                | `torch.nn.CrossEntropyLoss`    | Multi-class Classification   |
 
+
+---
+<br>
+
+## 🔸 [Augmentation](https://velog.io/@smsm8898/Study-Augmentationvision)
+
+| No | Augmentation | 정의 | 동작 원리 | 학습 효과 |
+|----|--------------|------|-----------|-----------|
+| 1  | **RandomHorizontalFlip** | 이미지를 좌우로 뒤집는 증강 | 확률 `p`에 따라 좌우 반전 | 좌우 대칭 객체나 방향 민감도 감소, 강건한 학습 |
+| 2  | **RandomResizedCrop / CenterCrop** | 이미지 일부 영역 선택 후 지정 크기로 조정 | 랜덤/중앙 위치 선택 → crop → resize | 다양한 위치 학습, 위치 변화에 강건 |
+| 3  | **ColorJitter** | 밝기, 대비, 채도, 색조 랜덤 변환 | 지정 범위 내 요소 무작위 조정 | 조명/색상 변화에 강건한 학습 |
+| 4  | **RandomRotation** | 이미지 지정 각도 범위 내 회전 | 랜덤 각도 선택 → 이미지 회전, 필요시 padding | 방향 변화에 강건, 회전 불변 특징 학습 |
+| 5  | **RandomAffine** | 회전, 이동, 스케일, 전단 등 복합 변형 | 지정 범위 내 변형 적용 | 위치, 크기, 형태 변화에 강건 |
+| 6  | **RandomGrayscale** | 일정 확률로 이미지 흑백 변환 | 확률 `p`로 변환 → 3채널 유지 | 색상 의존도 감소, 구조적 특징 학습 강화 |
+| 7  | **GaussianBlur** | 가우시안 필터로 흐림 처리 | 커널 크기 & 표준편차 → 이미지 convolution | 디테일 변화, 노이즈 강건성 향상 |
+| 8  | **RandomErasing / Cutout** | 이미지 일부 영역 지우기/가림 | 랜덤 위치 & 크기 선택 → 픽셀 0 또는 지정값 채움 | Occlusion 대응, 일부 정보 손실에도 강건 |
+| 9  | **Mixup** | 두 이미지 + 라벨을 가중 평균하여 합성 | λ 샘플링 → `x_new = λ*x1 + (1-λ)*x2`, `y_new = λ*y1 + (1-λ)*y2` | 경계 민감도 감소, 일반화 성능 향상, 오버피팅 감소 |
+| 10 | **CutMix** | 이미지 일부 영역 교체 + 라벨 혼합 | x2 일부 영역 x1에 덮어쓰기 → λ = 패치 비율 → y_new 혼합 | Occlusion 대응, Mixup보다 현실적 혼합, 일반화 성능 향상 |
