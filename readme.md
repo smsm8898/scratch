@@ -73,3 +73,16 @@ Understanding and Implementing the fundamental building blocks of Deep Learning 
 | 8  | **RandomErasing / Cutout** | 이미지 일부 영역 지우기/가림 | 랜덤 위치 & 크기 선택 → 픽셀 0 또는 지정값 채움 | Occlusion 대응, 일부 정보 손실에도 강건 |
 | 9  | **Mixup** | 두 이미지 + 라벨을 가중 평균하여 합성 | λ 샘플링 → `x_new = λ*x1 + (1-λ)*x2`, `y_new = λ*y1 + (1-λ)*y2` | 경계 민감도 감소, 일반화 성능 향상, 오버피팅 감소 |
 | 10 | **CutMix** | 이미지 일부 영역 교체 + 라벨 혼합 | x2 일부 영역 x1에 덮어쓰기 → λ = 패치 비율 → y_new 혼합 | Occlusion 대응, Mixup보다 현실적 혼합, 일반화 성능 향상 |
+
+
+---
+<br>
+
+## 🔸 [Scheduler](https://velog.io/@smsm8898/Study-Learning-Scheduler)
+
+| No | Scheduler             | 정의                                       | 동작 원리                                              | 학습 효과                                                     |
+| -- | --------------------- | ---------------------------------------- | -------------------------------------------------- | --------------------------------------------------------- |
+| 1  | **StepLR**            | 일정 epoch 간격마다 lr을 감소시키는 스케줄러             | `step_size` epoch마다 `lr = lr * gamma`              | 안정적인 수렴, 간단하고 기본적인 lr 스케줄링                                |
+| 2  | **CosineAnnealingLR** | lr을 cosine 곡선 형태로 부드럽게 감소                | `T_max` epoch 동안 lr이 최대 → 최소(`eta_min`)로 감소        | 부드러운 lr 감소로 모델이 세밀하게 수렴, 일반화 성능 향상                        |
+| 3  | **ReduceLROnPlateau** | val loss가 개선되지 않을 때 lr 감소                | `patience` epoch 동안 개선 없으면 `lr = lr * factor`      | 자동 lr 조정으로 불필요한 감소 방지, fine-tuning과 transfer learning에 유리 |
+| 4  | **OneCycleLR**        | lr을 한 주기 동안 올렸다가 내리는 방식, momentum 반대로 조절 | 초기 lr → `max_lr`로 증가 → 다시 감소, momentum은 lr과 반대로 변함 | 빠른 탐색과 안정적 수렴, 일반화 성능 향상, 최신 CNN/Transformer 학습에서 자주 사용   |
