@@ -1,5 +1,16 @@
 # Scratch
-Understanding and Implementing the fundamental building blocks of Deep Learning from original papers
+- Study and implement the parts I don’t understand while reproducing the paper
+- TODO
+  - DataLoader 작동원리
+    - num_workers
+    - pin_memory
+    - persistent_workers
+  - Training
+    - gradient_clip
+    - gradient_clip_algorithm
+    mixed precision(amp)
+
+
 
 ## Prerequisities
 - python >= 3.9
@@ -8,8 +19,10 @@ Understanding and Implementing the fundamental building blocks of Deep Learning 
 
 ## Experiment
 - To check the functions, open `activations`, `optimizers`, `losses`
-- For `Augmentation` experiment, I used `torchvision.transforms` functions
 - The experiment is implemented on `notebooks`
+  - For `Augmentation` experiment, I used `torchvision.transforms` functions
+  - For `learning rate` experiment, I user `torch.optim`, `torch.optim.lr_scheduler`, and customize for `warmup`.
+
 
 ---
 <br>
@@ -86,3 +99,14 @@ Understanding and Implementing the fundamental building blocks of Deep Learning 
 | 2  | **CosineAnnealingLR** | lr을 cosine 곡선 형태로 부드럽게 감소                | `T_max` epoch 동안 lr이 최대 → 최소(`eta_min`)로 감소        | 부드러운 lr 감소로 모델이 세밀하게 수렴, 일반화 성능 향상                        |
 | 3  | **ReduceLROnPlateau** | val loss가 개선되지 않을 때 lr 감소                | `patience` epoch 동안 개선 없으면 `lr = lr * factor`      | 자동 lr 조정으로 불필요한 감소 방지, fine-tuning과 transfer learning에 유리 |
 | 4  | **OneCycleLR**        | lr을 한 주기 동안 올렸다가 내리는 방식, momentum 반대로 조절 | 초기 lr → `max_lr`로 증가 → 다시 감소, momentum은 lr과 반대로 변함 | 빠른 탐색과 안정적 수렴, 일반화 성능 향상, 최신 CNN/Transformer 학습에서 자주 사용   |
+
+
+---
+<br>
+
+## 🔸 [Tokenizer](https://velog.io/@smsm8898/Study-Tokenizersnlp)
+| No | Tokenizer                    | 정의                                                  | 동작 원리                                                                                   | 학습 효과                                                           |
+| -- | ---------------------------- | --------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| 1  | **BPE (Byte-Pair Encoding)** | 가장 자주 등장하는 문자쌍(bigram)을 반복적으로 병합해 서브워드 생성           | ① 말뭉치를 문자 단위로 분리 → ② bigram 빈도 계산 → ③ 가장 많이 등장한 pair 병합 → ④ 반복 수행                       | 희귀 단어 분해 능력이 높고, 안정적이며 빠른 학습 / 하지만 너무 자주 등장하는 패턴에 과도하게 병합될 수 있음 |
+| 2  | **WordPiece**                | 확률 최대화(Likelihood maximization) 기반 병합을 수행하는 서브워드 모델 | ① 후보 서브워드를 만들고 점수(score)를 계산 → ② corpus likelihood가 가장 커지는 병합 선택 → ③ 반복                 | BPE보다 더 언어 모델링 목표에 맞춘 병합 생성 → 희귀 단어 처리 개선 / 다만 학습 속도는 더 느림      |
+| 3  | **Unigram**                  | 단일 서브워드 집합 중 최적의 조합을 선택하는 확률 모델                     | ① 충분히 큰 서브워드 후보 집합 생성 → ② 각 서브워드에 확률 부여 → ③ 전체 likelihood를 가장 높이는 방향으로 서브워드 제거(pruning) | 가장 유연하고 자연스럽게 분해되는 토큰 집합을 만들며, 한국어·일본어 같은 형태소 복잡한 언어에서 탁월함      |
